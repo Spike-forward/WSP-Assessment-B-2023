@@ -8,8 +8,33 @@
     <link rel="stylesheet" href="/login/login.css">
 </head>
 <body>
-    
-    
+    <div class="container-fluid">
+        <div class="row">  
+            <div class="col-sm-6 col-lg-5 login">
+                <!-- Login Form -->
+                <form id="login-form" action="/login" method="POST">
+                    <h1>Let's create your own recipe here!</h1>
+                    <h2>Please Login First!</h2>
+                    <div class="input-control">
+                        <input id="email" name="email" type="email" placeholder="Email" required/>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-control">
+                        <input id="password" name="password" type="password" placeholder="Password" required />
+                        <div class="error"></div>
+                    </div>
+                    <input type="submit" value="LOGIN" />
+
+                </form>
+
+                <div class="error-container"></div>
+            
+          </div>
+
+        </div>
+      </div>
+
     
     
     

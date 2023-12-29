@@ -1,11 +1,33 @@
 {
   "dependencies": {
     "@types/express-session": "^1.17.10",
+    "@types/node": "^20.10.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "express-session": "^1.17.3"
+    "express-session": "^1.17.3",
+    "pg": "^8.11.3",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "ts-node-dev": "^2.0.0"
-  }
+  },
+  "name": "wsp-assessment-b-2023",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spike-forward/WSP-Assessment-B-2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spike-forward/WSP-Assessment-B-2023/issues"
+  },
+  "homepage": "https://github.com/Spike-forward/WSP-Assessment-B-2023#readme"
 }
