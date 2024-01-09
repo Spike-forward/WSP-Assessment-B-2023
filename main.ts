@@ -2,16 +2,24 @@ import express from 'express'
 import expressSession from 'express-session'
 import {Client} from 'pg';
 import dotenv from 'dotenv';
-
-// import path from 'path';
 import { isLoggedIn } from './guard';
+import { loginRoutes } from './routes/loginRoutes';
+dotenv.config();
+declare module "express-session" {
+  interface SessionData {
+    owner?: string;
+    owner_id: number
+  }
+}
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Make Connection to Database
-dotenv.config();
+
+app.use(express.static("public"));
+app.use(isLoggedIn,express.static("private"));
 
 export const client = new Client({
   database: process.env.DB_NAME, 
@@ -30,7 +38,7 @@ app.use(
 	})
   )
 
-
+app.use("/login", loginRoutes)
 const PORT = 8080;
 
 app.listen(PORT, () => {

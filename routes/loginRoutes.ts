@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import { client } from "../main";
-import { Owner } from "../models";
+// import { Owner } from "../models";
 import { checkPassword } from '../hash';
 
 export const loginRoutes = express.Router();
@@ -14,7 +14,7 @@ async function ownerLogin(req:Request, res:Response){
 
 	const result = await client.query(`SELECT email, password FROM owner where email = $1`, [req.body.email])
     
-	const [owner]: Owner[] = result.rows
+	const owner = result.rows
 
 	const matched = await checkPassword(req.body.password, owner.password)
    
